@@ -1,0 +1,55 @@
+buildscript {
+    ext {
+        springBootVersion = "2.0.6.RELEASE"
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: "java"
+apply plugin: "war"
+apply plugin: "org.springframework.boot"
+apply plugin: "io.spring.dependency-management"
+
+group = "org.superbiz"
+version = "1.1.0-SNAPSHOT"
+
+description = "OpenEJB :: Web Examples :: Moviefun"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
+
+dependencies {
+    compile group: 'taglibs', name: 'standard', version:'1.1.2'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat'
+    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version:'8.5.34'
+    compile group: 'javax.servlet', name: 'jstl', version:'1.2'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+    compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.47'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-csv', version:'2.7.0'
+    compile group: 'commons-lang', name: 'commons-lang', version:'2.4'
+    compile group: 'org.apache.tika', name: 'tika-core', version:'1.14'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk', version:'1.11.74'
+    compile group: 'org.apache.geronimo.components', name: 'geronimo-jaspi', version:'2.0.0'
+    compile group: 'org.apache.tomee', name: 'javaee-api', version:'8.0'
+    compile group: 'org.apache.geronimo.specs', name: 'geronimo-osgi-locator', version:'1.1'
+    
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+}
