@@ -1,1 +1,3 @@
 rootProject.name = 'moviefun'
+include "applications:movie-fun-app"
+include "components:movies"
