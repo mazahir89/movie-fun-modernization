@@ -1,0 +1,9 @@
+---
+applications:
+- name: album-service
+  path: build/libs/album-service-1.1.0-SNAPSHOT.jar
+  routes:
+  - route: album-service.apps.evans.pal.pivotal.io
+  services:
+  - albums-database
+  - photo-storage

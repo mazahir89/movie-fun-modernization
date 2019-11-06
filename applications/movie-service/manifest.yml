@@ -1,0 +1,8 @@
+---
+applications:
+- name: movie-service
+  path: build/libs/movie-service-1.1.0-SNAPSHOT.jar
+  routes:
+  - route: movie-service.apps.evans.pal.pivotal.io
+  services:
+  - movies-database

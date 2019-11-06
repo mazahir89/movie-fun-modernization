@@ -1,0 +1,10 @@
+applications:
+- name: movie-fun-app
+  path: build/libs/movie-fun-app-1.1.0-SNAPSHOT.war
+  routes:
+  - route: moviefun.apps.evans.pal.pivotal.io
+  services:
+  - photo-storage
+  env:
+    MOVIES_URL: https://movie-service.apps.evans.pal.pivotal.io
+    ALBUMS_URL: https://album-service.apps.evans.pal.pivotal.io
